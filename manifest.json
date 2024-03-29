@@ -1,0 +1,21 @@
+{
+    "name": "WebCite",
+    "version": "1.0.0",
+    "description": "WebCite is an extension that allows you to quickly retrieve any website's bibliographic citation (in APA7 or MLA formats). Additionally, WebCite allows users to copy any site's in-text citation to their clipboard along with any selected quotation or text. Made to make your life as a researcher easier.",
+    "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "storage",
+        "clipboardWrite",
+        "clipboardRead",
+        "scripting",
+        "runtime"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "WebCite"
+    }
+}
