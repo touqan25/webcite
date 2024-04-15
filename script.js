@@ -1,16 +1,17 @@
-document.querySelector('#copyButton').addEventListener('click', function() {
-    // Message to be sent
-    const message = {
-        type: 'GREETING',
-        content: 'Hello from the popup!'
-    };
+document.querySelector('#copyButton').addEventListener('click', async function() {
 
-    // Send message to the active tab
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, message);
+  const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+  let result;
+  try {
+    [{result}] = await chrome.scripting.executeScript({
+      target: {tabId: tab.id},
+      func: () => getSelection().toString(),
     });
+    console.log('here is the result', result);
+  } catch (e) {
+    console.warn('error getting selection', e.message)
+  }
 });
-
 
 
 // // Event listener for APA7 button
