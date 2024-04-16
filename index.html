@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebCite</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="automatic.js" defer></script>
+    <script src="inText.js" defer></script>
 </head>
 <body>
     <div class="indexForm">
         <div class="title">📝 WebCite 📝</div>
-        <div class="subtitle">Highlight text, then click to generate in-text citation</div>
+        <div class="subtitle">Fill Fields, highlight text, then click to generate in-text citation</div>
+        <div class="input-container ic2">
+            <input id="lastname" class="input" type="text" placeholder=" " />
+            <div class="cut"></div>
+            <label for="lastname" class="placeholder">Author Last Name</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="publishedDate" class="input" type="text" placeholder=" " />
+            <div class="cut"></div>
+            <label for="publishedDate" class="placeholder">Publish Date (YYYY)</label>
+        </div>
         <div class="button-display">
             <button class="button not-copied" id="copyButton">Copy APA7 Citation</button>
             <button class="button not-copied" id="copyButton2">Copy MLA Citation</button>
         </br>
-            <a href="manualCitation.html"><button class="button not-copied" id="manualButton">Create Manual Citation</button></a>
+            <a href="bibliographic.html"><button class="button not-copied" id="manualButton">Create Bibliographic Citation</button></a>
         </div>
     </div>
 </body>

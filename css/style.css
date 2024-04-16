@@ -28,16 +28,16 @@ body {
   background-color: #1a1c35;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 400px;
+  height: 550px;
   padding: 20px;
-  width: 320px;
+  width: 350px;
 }
 
 .manualForm {
   background-color: #1a1c35;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 700px;
+  height: 600px;
   padding: 20px;
   width: 350px;
 }
