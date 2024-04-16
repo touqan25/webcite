@@ -1,18 +1,139 @@
+/* borrowed some styling elements from https://codepen.io/ainalem/pen/GRqPwoz?editors=1100 */
+
 body {
-    border: 3px solid #000000;
-    border-radius: 20px;
-    width: 250px;
-    height: 250px;
+    background-color: #000000;
 }
 
-h1 {
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0;
-    padding: 10px;
-    text-align: center;
+.title {
+  color: #FFFFFF;
+  font-family: sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-align: center;
 }
+
+.subtitle {
+  color: #FFFFFF;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.indexForm {
+  background-color: #1a1c35;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 400px;
+  padding: 20px;
+  width: 320px;
+}
+
+.manualForm {
+  background-color: #1a1c35;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 700px;
+  padding: 20px;
+  width: 350px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 40px;
+}
+
+.ic2 {
+  margin-top: 30px;
+}
+
+.input {
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 14px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.cut {
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 100px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.input:focus ~ .placeholder {
+  color: #FFFFFF;
+}
+
+.submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: #06b;
+}
+
 
 .button-display {
     display: flex;
@@ -22,11 +143,19 @@ h1 {
     gap: 10px;
 }
 
-#copyButton, #copyButton2 {
-    border: 3px solid #000000;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 10px;
+}
+
+.button {
+    border: 3px solid #FFFFFF;
     border-radius: 20px;
     box-sizing: border-box;
-    color: #000000;
+    color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
     font-family: "Roboto", sans-serif;
@@ -38,20 +167,43 @@ h1 {
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
 }
 
-#copyButton:hover, #copyButton2:hover {
-    color: #FFFFFF;
-    background-color: #000000;
+#manualButton {
+    width: 100.5%
+}
+
+.button:hover {
+    color: #08d;
+    background-color: #FFFFFF;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
 
-#copyButton:active, #copyButton2:active {
+.backButton {
+    color: #FFFFFF;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+
+}
+
+.clearField {
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.clearField:hover {
+  cursor: pointer;
+}
+
+#copyButton:active, #copyButton2:active, #manualButton:active {
     box-shadow: none;
     transform: translateY(0);
 }
 
 .not-copied {
-    background-color: #FFFFFF;
+    background-color: #08d;
 }
 
 .copied {
